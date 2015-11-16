@@ -1,7 +1,7 @@
 //
 //  FXBlurView.h
 //
-//  Version 1.6.2
+//  Version 1.6.4
 //
 //  Created by Nick Lockwood on 25/08/2013.
 //  Copyright (c) 2013 Charcoal Design
@@ -32,6 +32,8 @@
 
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import <Accelerate/Accelerate.h>
 
 
 #pragma GCC diagnostic push
@@ -60,14 +62,13 @@
 + (void)setUpdatesEnabled;
 + (void)setUpdatesDisabled;
 
-@property (nonatomic, getter = hasSKView) BOOL skView;
 @property (nonatomic, getter = isBlurEnabled) BOOL blurEnabled;
 @property (nonatomic, getter = isDynamic) BOOL dynamic;
 @property (nonatomic, assign) NSUInteger iterations;
 @property (nonatomic, assign) NSTimeInterval updateInterval;
 @property (nonatomic, assign) CGFloat blurRadius;
 @property (nonatomic, strong) UIColor *tintColor;
-@property (nonatomic, weak_ref) UIView *underlyingView;
+@property (nonatomic, weak_ref) IBOutlet UIView *underlyingView;
 
 - (void)updateAsynchronously:(BOOL)async completion:(void (^)())completion;
 

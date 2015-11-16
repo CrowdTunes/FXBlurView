@@ -7,8 +7,8 @@ FXBlurView is a UIView subclass that replicates the iOS 7 realtime background bl
 Supported iOS & SDK Versions
 -----------------------------
 
-* Supported build target - iOS 8.0 (Xcode 6.0, Apple LLVM compiler 6.0)
-* Earliest supported deployment target - iOS 6.0
+* Supported build target - iOS 8.4 (Xcode 6.4, Apple LLVM compiler 6.1)
+* Earliest supported deployment target - iOS 7.0
 * Earliest compatible deployment target - iOS 4.3
 
 NOTE: 'Supported' means that the library has been tested with this version. 'Compatible' means that the library should work on this iOS version (i.e. it doesn't rely on any unavailable SDK features) but is no longer being tested for compatibility and may require tweaking or bug fixes to run correctly.
@@ -113,6 +113,20 @@ FAQ
     
 Release Notes
 -----------------
+
+Version 1.6.4
+
+- `blurredImageWithRadius:iterations:tintColor:` now works if image is not in ARGB format
+- Fixed "<Error>: CGContextRestoreGState: invalid context 0x0."
+- Empty sublayers are now hidden before snapshotting to prevent renderInContext crash on iOS 8
+- FXBlurView now automatically uses slower drawViewHierarchyInRect method when needed to capture content
+- Added Travis integration
+
+Version 1.6.3
+
+- FXBlurView image background is no longer opaque/black, so it can be used as a translucent overlay
+- underlyingView property is now an IBOutlet, so it can be connected in Interface Builder
+- Moved imports into header for better Swift compatibility
 
 Version 1.6.2
 
